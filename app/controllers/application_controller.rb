@@ -50,7 +50,7 @@ class ApplicationController < Sinatra::Base
     # first find user
     @user = User.find(session[:username])
     # make sure password is correct
-    
+    # if it is, redirect to 
     
     
   end
