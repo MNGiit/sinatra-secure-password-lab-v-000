@@ -50,7 +50,9 @@ class ApplicationController < Sinatra::Base
     # first find user
     @user = User.find(session[:username])
     # make sure password is correct
-    # if it is, redirect to 
+    # if it is, redirect to /account after assign session[user_id] from @user.user_id
+    # if it isn't correct, redirect to failure
+    if @user.password == params[:password]
     
     
   end
