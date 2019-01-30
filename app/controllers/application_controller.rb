@@ -48,7 +48,7 @@ class ApplicationController < Sinatra::Base
   post "/login" do
     ##your code here
     # first find user
-    @user = User.find(session[:username])
+    # @user = User.find(session[:username])
     # make sure password is correct
     # if it is, redirect to /account after assign session[user_id] from @user.user_id
     # if it isn't correct, redirect to failure
