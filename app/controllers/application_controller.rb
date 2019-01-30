@@ -47,7 +47,8 @@ class ApplicationController < Sinatra::Base
 
   post "/login" do
     ##your code here
-    
+    # first find user
+    @user = User.find(session[:username])
     
     
   end
