@@ -53,7 +53,7 @@ class ApplicationController < Sinatra::Base
     # if it is, redirect to /account after assign session[user_id] from @user.user_id
     # if it isn't correct, redirect to failure
     # and use authenticate method for password checking
-    if @user.password == @user.authenticate
+    if @user.password == @user.authenticate[params(:password)]
       session[:user_id] = @user.id
       redirect "/account"
     else
