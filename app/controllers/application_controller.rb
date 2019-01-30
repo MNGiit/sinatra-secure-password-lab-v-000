@@ -49,6 +49,8 @@ class ApplicationController < Sinatra::Base
     ##your code here
     # first find user
     @user = User.find(session[:username])
+    # make sure password is correct
+    
     
     
   end
