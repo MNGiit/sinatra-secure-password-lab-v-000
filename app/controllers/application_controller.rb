@@ -54,7 +54,8 @@ class ApplicationController < Sinatra::Base
     # if it isn't correct, redirect to failure
     # and use authenticate method for password checking
     @user = User.find_by(username: params[:username])
-    if @user && @user.authenticate(params[:password])
+    if @user && @user.authenticate(params[:password]) # @user goes before @user.authenticate or it won't work
+      # also params[:password] != "" doesn't work for some reason for an if condition
       session[:user_id] = @user.id
       redirect to "/account"
     else
